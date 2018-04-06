@@ -78,6 +78,21 @@ public class MarketApi {
      */
 
     // @GetMapping(value="peers", produces = MediaType.APPLICATION_JSON_VALUE)
+
+
+
+
+
+
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!! IMPORTANT NOTE ***********************************************************************
+
+    // @joel please note I know if i would change the return type i can get the same response but the issue is our ui has been made
+    // according to the response coming from the corda webserver .And when we change from the corda websever to the spring boot
+    // these kind of difference is coming .I have shown u one example we are facing the same issue with lots of API response
+    // please provide some generic solution or atleast the cordawebserver doing the response tweak so that  we can have it in spring boot as weel
+    /// thankss
+
+   // ***********************************************************************
     @GET
     @Path("peers")
     @Produces(MediaType.APPLICATION_JSON)
