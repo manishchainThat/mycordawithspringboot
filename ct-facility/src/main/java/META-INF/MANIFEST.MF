@@ -1,0 +1,77 @@
+Manifest-Version: 1.0
+Class-Path: jul-to-slf4j-1.7.25.jar hibernate-java8-5.2.14.Final.jar e
+ ddsa-0.2.0.jar hk2-config-2.5.0-b42.jar catalyst-common-1.1.2.jar hib
+ ernate-core-5.2.14.Final.jar metrics-core-3.2.6.jar commons-fileuploa
+ d-1.3.3.jar library-master-v1.1-beta-g6215ec8-87.jar spring-boot-star
+ ter-web-2.0.0.RELEASE.jar jimfs-1.1.jar netty-transport-4.1.22.Final.
+ jar netty-resolver-4.1.22.Final.jar objenesis-2.6.jar catalyst-transp
+ ort-1.1.2.jar javax.ws.rs-api-2.1.jar spring-web-5.0.4.RELEASE.jar ge
+ ronimo-json_1.0_spec-1.0-alpha-1.jar groovy-all-2.4.13.jar log4j-slf4
+ j-impl-2.10.0.jar jersey-container-servlet-core-2.26.jar junit-4.12.j
+ ar netty-common-4.1.22.Final.jar jboss-transaction-api_1.2_spec-1.0.1
+ .Final.jar commons-jexl3-3.0.jar jackson-dataformat-yaml-2.9.4.jar lo
+ g4j-core-2.10.0.jar proton-j-0.21.0.jar jackson-datatype-jdk8-2.9.4.j
+ ar copycat-server-1.2.3.jar javax.inject-1.jar corda-rpc-2.0.0.jar co
+ rda-2.0.0.jar commons-collections4-4.1.jar johnzon-core-0.9.5.jar ger
+ onimo-jms_2.0_spec-1.0-alpha-2.jar corda-jackson-2.0.0.jar corda-conf
+ idential-identities-2.0.0.jar artemis-jms-client-2.4.0.jar hamcrest-c
+ ore-1.3.jar spring-core-5.0.4.RELEASE.jar kotlin-reflect-1.2.21.jar j
+ cabi-log-0.14.jar guava-21.0.jar kryo-serializers-0.41.jar netty-code
+ c-4.1.22.Final.jar error_prone_annotations-2.0.15.jar spring-boot-sta
+ rter-tomcat-2.0.0.RELEASE.jar netty-all-4.1.22.Final.jar jackson-anno
+ tations-2.9.0.jar commons-logging-1.2.jar catalyst-netty-1.1.2.jar sp
+ ring-boot-starter-2.0.0.RELEASE.jar kotlin-stdlib-jre7-1.2.21.jar jav
+ ax.annotation-api-1.3.2.jar catalyst-buffer-1.1.2.jar hibernate-commo
+ ns-annotations-5.0.1.Final.jar corda-node-api-2.0.0.jar tomcat-embed-
+ el-8.5.28.jar spring-webmvc-5.0.4.RELEASE.jar mockito-kotlin-1.1.0.ja
+ r spring-boot-starter-json-2.0.0.RELEASE.jar jersey-bean-validation-2
+ .26.jar netty-transport-native-epoll-4.1.22.Final-linux-x86_64.jar cr
+ ash.cli-9d242da2a10e686f33a3aefc69e4768824ad0716.jar forms_rt-7.0.3.j
+ ar json-simple-1.1.1.jar corda-node-driver-2.0.0.jar corda-finance-2.
+ 0.0.jar corda-mock-2.0.0.jar jersey-entity-filtering-2.26.jar byte-bu
+ ddy-agent-1.7.10.jar mockito-core-2.15.0.jar jersey-client-2.26.jar v
+ alidation-api-2.0.1.Final.jar guava-testlib-21.0.jar netty-transport-
+ native-unix-common-4.1.22.Final.jar objenesis-2.2.jar kotlin-stdlib-j
+ re8-1.2.21.jar jersey-media-jaxb-2.26.jar tomcat-embed-core-8.5.28.ja
+ r jackson-datatype-jsr310-2.9.4.jar spring-boot-autoconfigure-2.0.0.R
+ ELEASE.jar artemis-core-client-2.4.0.jar spring-jcl-5.0.4.RELEASE.jar
+  spring-expression-5.0.4.RELEASE.jar jersey-container-servlet-2.26.ja
+ r forms-1.1-preview.jar okio-1.11.0.jar jersey-hk2-2.26.jar jansi-1.1
+ 4.jar artemis-amqp-protocol-2.4.0.jar class-model-2.5.0-b42.jar osgi-
+ resource-locator-1.0.1.jar copycat-protocol-1.2.3.jar hk2-2.5.0-b42.j
+ ar config-1.3.1.jar spring-boot-starter-validation-2.0.0.RELEASE.jar 
+ jsr305-3.0.1.jar crash.shell-9d242da2a10e686f33a3aefc69e4768824ad0716
+ .jar spring-boot-starter-jersey-2.0.0.RELEASE.jar commons-collections
+ -3.2.2.jar tomcat-embed-websocket-8.5.28.jar commons-beanutils-1.9.3.
+ jar jdom-1.0.jar jersey-spring4-2.26.jar bcprov-jdk15on-1.57.jar hk2-
+ utils-2.5.0-b42.jar artemis-server-2.4.0.jar netty-codec-http-4.1.22.
+ Final.jar catalyst-serializer-1.1.2.jar minlog-1.3.0.jar jandex-2.0.3
+ .Final.jar copycat-client-1.2.3.jar hibernate-validator-6.0.7.Final.j
+ ar commons-codec-1.11.jar asm-all-repackaged-2.5.0-b42.jar kryo-4.0.0
+ .jar jackson-core-2.9.4.jar hk2-locator-2.5.0-b42.jar jopt-simple-5.0
+ .2.jar netty-handler-4.1.22.Final.jar snakeyaml-1.19.jar jersey-serve
+ r-2.26.jar artemis-native-2.4.0.jar jgroups-3.6.13.Final.jar h2-1.4.1
+ 96.jar corda-test-common-2.0.0.jar asm-5.0.4.jar catalyst-concurrent-
+ 1.1.2.jar hk2-core-2.5.0-b42.jar jersey-media-json-jackson-2.26.jar q
+ uasar-core-0.7.9-jdk8.jar dom4j-1.6.1.jar artemis-journal-2.4.0.jar c
+ orda-core-2.0.0.jar javassist-3.22.0-GA.jar cordform-common-1.0.2.jar
+  artemis-commons-2.4.0.jar corda-node-2.0.0.jar byte-buddy-1.7.10.jar
+  jackson-module-jaxb-annotations-2.9.4.jar javassist-3.22.0-CR2.jar o
+ khttp-3.5.0.jar netty-transport-native-kqueue-4.1.22.Final-osx-x86_64
+ .jar netty-buffer-4.1.22.Final.jar CT-facility-cordapp-0.1.jar rxjava
+ -1.3.6.jar commons-io-2.2.jar corda-test-utils-2.0.0.jar spring-boot-
+ 2.0.0.RELEASE.jar log4j-api-2.10.0.jar classmate-1.3.4.jar bcpkix-jdk
+ 15on-1.57.jar log4j-web-2.7.jar artemis-selector-2.4.0.jar antlr-2.7.
+ 7.jar hk2-api-2.5.0-b42.jar jackson-databind-2.9.4.jar annotations-13
+ .0.jar jersey-common-2.26.jar artemis-jdbc-store-2.4.0.jar jackson-mo
+ dule-parameter-names-2.9.4.jar hibernate-jpa-2.1-api-1.0.0.Final.jar 
+ reflectasm-1.11.3.jar kotlin-stdlib-1.2.21.jar spring-beans-5.0.4.REL
+ EASE.jar slf4j-api-1.7.25.jar spring-boot-starter-log4j2-2.0.0.RELEAS
+ E.jar jcl-over-slf4j-1.7.25.jar jboss-logging-3.3.2.Final.jar jcabi-m
+ anifests-1.1.jar kotlin-test-1.1.4.jar HikariCP-2.7.8.jar jackson-mod
+ ule-kotlin-2.9.4.jar spring-bridge-2.5.0-b42.jar aopalliance-repackag
+ ed-2.5.0-b42.jar fast-classpath-scanner-2.0.21.jar hk2-runlevel-2.5.0
+ -b42.jar config-types-2.5.0-b42.jar spring-context-5.0.4.RELEASE.jar 
+ spring-aop-5.0.4.RELEASE.jar
+Main-Class: 
+

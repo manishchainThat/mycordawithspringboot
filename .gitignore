@@ -1,0 +1,14 @@
+ct-facility/build/
+ct-facility/out/
+ct-facility/.gradle
+ct-facility/logs
+.gradle/
+.idea/workspace.xml
+.idea/libraries/
+.idea/modules/
+classes/
+
+
+
+
+

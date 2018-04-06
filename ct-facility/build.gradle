@@ -1,0 +1,148 @@
+
+buildscript {
+    ext.corda_release_version = '2.0.0'
+    ext.corda_gradle_plugins_version = '1.0.0'
+    ext.junit_version = '4.12'
+
+    ext.spring_boot_version = '2.0.0.RELEASE'
+    ext.spring_version = '5.0.4.RELEASE'
+
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "net.corda.plugins:cordformation:$corda_gradle_plugins_version"
+        classpath "net.corda.plugins:publish-utils:$corda_gradle_plugins_version"
+        //Check for the latest version here: http://plugins.gradle.org/plugin/com.jfrog.artifactory
+        classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.+')
+        classpath 'org.hidetake:gradle-ssh-plugin:2.9.0'
+        classpath 'de.undercouch:gradle-download-task:3.3.0'
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.0.RELEASE")
+    }
+}
+
+repositories {
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+    maven { url 'https://ci-artifactory.corda.r3cev.com/artifactory/corda-releases' }
+    maven { url 'https://dl.bintray.com/kotlin/exposed' }
+    maven { url 'https://jitpack.io' }
+
+
+}
+
+
+apply plugin: 'java'
+apply plugin: 'net.corda.plugins.cordformation'
+apply plugin: 'com.jfrog.artifactory'
+apply plugin: 'maven-publish'
+apply plugin: 'net.corda.plugins.publish-utils'
+apply plugin: 'org.hidetake.ssh'
+apply plugin: 'de.undercouch.download'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+
+dependencies {
+    testCompile "junit:junit:$junit_version"
+
+    // Corda integration dependencies
+    cordaCompile "net.corda:corda-core:$corda_release_version"
+    cordaCompile "net.corda:corda-finance:$corda_release_version"
+    cordaCompile "net.corda:corda-jackson:$corda_release_version"
+    cordaCompile "net.corda:corda-rpc:$corda_release_version"
+    cordaRuntime "net.corda:corda:$corda_release_version"
+    testCompile "net.corda:corda-node-driver:$corda_release_version"
+
+    compile("org.springframework.boot:spring-boot-starter-web:$spring_boot_version") {
+        exclude group: "org.springframework.boot", module: "spring-boot-starter-logging"
+    }
+
+/*
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-parent',version:'1.5.0.RELEASE'
+*/
+    compile (group: 'org.springframework.boot', name: 'spring-boot-starter-jersey', version: '2.0.0.RELEASE')
+            {
+                exclude group: "org.springframework.boot", module: "spring-boot-starter-logging"
+            }
+
+    compile "org.springframework.boot:spring-boot-starter-log4j2:$spring_boot_version"
+    compile "org.apache.logging.log4j:log4j-web:2.7"
+
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.4'
+
+    compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1.1'
+
+    compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.26'
+
+
+}
+
+
+tasks.withType(JavaCompile) {
+    options.compilerArgs << "-parameters" // Required for passing named arguments to your flow via the shell.
+}
+
+
+
+
+task runFacilityClient(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = 'com.template.client.TemplateClient'
+    args 'localhost:10006'
+}
+
+
+
+//boot task
+
+bootJar {
+    archiveName  'CT-facility-observer.jar'
+}
+jar{
+    archiveName 'CT-facility-observer.jar'
+}
+
+
+
+
+
+task deployCordaSpringBootNodes {
+    doLast {
+        ssh.run {
+            session(remotes.role('manishcordaDevNodes')) {
+                execute 'sudo service spring-boot stop'
+                execute 'sudo service corda stop'
+                put from: file("$rootDir/build/CT-facility-observer-0.1.jar"), into: '/home/ubuntu/CT-IBF-SpringWeb'
+                //put from: remoteFile, into: '/opt/corda/plugins'
+                execute 'sudo service corda start'
+                execute 'sudo service spring-boot start'
+
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+apply plugin: 'java'
+
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
